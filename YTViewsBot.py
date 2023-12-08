@@ -3,8 +3,9 @@
 """
     *******************************************************************************************
     YouTubeViewsBot: YouTube Views Bot
-    Author: Ali Toori
-    Telegram: https://t.me/AliToori
+    Author: Ali Toori, Python Developer [Bot Builder]
+    Website: https://boteaz.com
+    YouTube: https://youtube.com/@AliToori
     *******************************************************************************************
 """
 import concurrent.futures
@@ -77,7 +78,7 @@ def get_logger():
                 "class": "logging.handlers.RotatingFileHandler",
                 "level": "INFO",
                 "formatter": "simple",
-                "filename": "AliLab.log",
+                "filename": "YouTubeViewsBot.log",
                 "maxBytes": 2 * 1024 * 1024,
                 "backupCount": 1
             },
@@ -90,7 +91,7 @@ def get_logger():
 
 
 PROJECT_ROOT = Path(os.path.abspath(os.path.dirname(__file__)))
-file = str(PROJECT_ROOT / '3CommasBot.log')
+file = str(PROJECT_ROOT / 'YouTubeViewsBot.log')
 
 
 LOGGER = get_logger()
@@ -98,14 +99,14 @@ LOGGER = get_logger()
 
 # takes proxies from proxies.txt and returns to list
 def create_proxy_list():
-    proxy_file = r"E:\AliData\BotFlocks\AliBots\TwitchViewsBot\TwitchRes\proxy_list.txt"
+    proxy_file = r"BotRes\proxy_list.txt"
     with open(proxy_file, 'r') as f:
         proxy_list = [line.strip() for line in f.readlines()]
     return proxy_list
 
 
 def get_user_agents():
-    file_uagents = r"C:\Users\Administrator\Desktop\TwitchViewsBot\TwitchViewsBot\TwitchRes\user_agents.txt"
+    file_uagents = r"BotRes\user_agents.txt"
     with open(file_uagents) as f:
         content = f.readlines()
     u_agents_list = [x.strip() for x in content]
